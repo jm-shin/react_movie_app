@@ -1,5 +1,8 @@
 import React from 'react';
-import Hero from './Hero';
+
+function Hero(){
+  return <h1>I like Hero</h1>
+}
 
 function App() {
   return(
