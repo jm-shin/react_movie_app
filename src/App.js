@@ -1,14 +1,15 @@
 import React from 'react';
 
-function Hero(){
-  return <h1>I like Hero</h1>
+function Food(props){
+  var {fav} = props;
+  return <h1>I like {fav}</h1>;
 }
 
 function App() {
   return(
     <div>
       <h1>Hello</h1>
-      <Hero/>
+      <Food fav="kimchi"/>
     </div>
   ); 
 }
