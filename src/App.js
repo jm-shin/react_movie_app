@@ -1,52 +1,21 @@
 import React from 'react';
 
 class App extends React.Component{
-
-  constructor(props){
-    super(props);
-    console.log('hello');
-  }
-  
-  //state 정의하기
   state = {
-    count: 0,
+    isLoding: true,
+    movies: [],
   };
-
-  add = () => {
-    this.setState( current =>({
-      count: current.count+1,
-    }));
-  }
-
-  minus = () => {
-    this.setState(current => ({
-      count: current.count-1,
-    }));
-  }
-
   componentDidMount(){
-    console.log('component rendered');
-  }
-
-  componentDidUpdate(){
-    console.log('I just Updated!');
-  }
-
-  componentWillUnmount(){
-    console.log('Goodbye, cruel world');
+    //영화 데이터 로딩
+    setTimeout(() => {
+      this.setState({isLoding: false});
+    }, 6000);
   }
 
   render(){
-    console.log("I'm rendering");
-  return(
-    <div>
-      <h1>The number is: {this.state.count}</h1>
-      <button onClick={this.add}>Add</button>
-      <button onClick={this.minus}>Minus</button>
-    </div>
-    );
+    const { isLoding } = this.state;
+    return <div>{isLoding? 'Loding...': 'We are ready'}</div>;
   }
-
 }
 
 export default App;
